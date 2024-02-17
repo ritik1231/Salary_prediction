@@ -16,10 +16,10 @@ def predict(request):
     edu = request.POST['education']
     job_title = request.POST['jobTitle']
     exp = int(request.POST['experience'])
-    model = pd.read_pickle('/home/ritik/mysite/salary_prediction/DR_model.pickle')
-    edu_enc = pd.read_pickle('/home/ritik/mysite/salary_prediction/edu_enc.pickle')
-    gen_enc = pd.read_pickle('/home/ritik/mysite/salary_prediction/gen_enc.pickle')
-    job_enc = pd.read_pickle('/home/ritik/mysite/salary_prediction/job_enc.pickle')
+    model = pd.read_pickle('./DR_model.pickle')
+    edu_enc = pd.read_pickle('./edu_enc.pickle')
+    gen_enc = pd.read_pickle('./gen_enc.pickle')
+    job_enc = pd.read_pickle('./job_enc.pickle')
 
     test_input = np.array([age, gen, edu, job_title, exp],dtype=object).reshape(1,5)
 
